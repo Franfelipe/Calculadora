@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'calculadora';
+  title = 'Calculadora';
+  result: any;
+  fields = ["AC", "+/-", "%", "/", "7","8", "9", "X","4", "5", "6", "-", "1", "2", "3", "+","0", "."]
+
+
+  getField(field: string){
+    if(field == 'AC'){
+      this.result = 0
+    }else{
+      this.result = field
+    }
+
+  }
 }
