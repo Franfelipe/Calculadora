@@ -1,4 +1,4 @@
-import { Component, ɵConsole } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,16 @@ export class AppComponent {
   result: any = "";
   value1: number = 0
   value2: number = 0
-  fields = [" AC ", " +/- ", " % ", " / ", "7","8", "9", " X ","4", "5", "6", " - ", "1", "2", "3", " + ","0", "."];
-  operadores = ["%", "/", "X", "-", "+", "."];
-
+  fields = ["AC", "+/-", " % ", " / ", "7","8", "9", " X ","4", "5", "6", " - ", "1", "2", "3", " + ","0", "."];
 
   getField(field: string){
-    field == "AC"? this.Clear() : this.result += field;
+    if(field == "AC"){
+      this.Clear();
+    } else if(field == "+/-"){
+      this.setNegativo();
+    }else{
+      this.result += field
+    }
   }
 
   calculate(){
@@ -44,6 +48,6 @@ export class AppComponent {
   }
 
   private setNegativo(){
-    this.result > 0 ? this.result : null;
+    this.result += "-";
   }
 }
