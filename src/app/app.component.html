@@ -1,6 +1,6 @@
 <div class="container">
   <div class="notification is-primary text-aling-center">
-    {{title}}
+    <h1>{{title}}</h1>
   </div>
   <div class="field">
     <div class="control">
@@ -12,7 +12,7 @@
         <button class="button is-primary is-outlined is-large is-fullwidth" (click)="getField(field)">{{field}}</button>
     </div>
     <div class="column is-two-quarter">
-      <button class="button is-primary is-outlined is-large is-fullwidth">=</button>
+      <button class="button is-primary is-outlined is-large is-fullwidth" (click)="calculate()">=</button>
     </div>
   </div>
 </div>
